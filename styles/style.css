@@ -327,6 +327,37 @@ dialog::backdrop {
   margin-inline: auto;
 }
 
+.character-card-image {
+  width: min(160px, 100%);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 0 auto 14px;
+  box-shadow: 0 6px 18px rgba(45, 34, 24, 0.08);
+  border: 2px solid #6e1b1b;
+}
+
+.character-dialog-image {
+  width: min(160px, 100%);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 0 auto 16px;
+  box-shadow: 0 6px 18px rgba(45, 34, 24, 0.08);
+  border: 2px solid #6e1b1b;
+}
+
+.character-dialog-image {
+  width: min(180px, 100%);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px;
+  margin: 0 auto 18px;
+  box-shadow: 0 6px 18px rgba(45, 34, 24, 0.08);
+  border: 2px solid #6e1b1b;
+}
+
 footer {
   padding: 0 0 36px;
   color: var(--muted);

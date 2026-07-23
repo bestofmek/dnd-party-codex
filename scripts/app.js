@@ -26,14 +26,15 @@ function openCharacterDialog(characterId) {
   const character = charactersData.find((item) => String(item.id) === String(characterId));
   if (!character || !dialog || !content) return;
 
-  content.innerHTML = `
-    <h3>${character.name}</h3>
-    <p><strong>Classe:</strong> ${character.class}</p>
-    <p><strong>Livello:</strong> ${character.level}</p>
-    <p><strong>Giocatore:</strong> ${character.player}</p>
-    <p><strong>Ascendenza:</strong> ${character.ancestry}</p>
-    <p>${character.summary}</p>
-  `;
+content.innerHTML = `
+  ${character.image ? `<img class="character-dialog-image" src="${character.image}" alt="Ritratto di ${character.name}" />` : ""}
+  <h3>${character.name}</h3>
+  <p><strong>Classe:</strong> ${character.class}</p>
+  <p><strong>Livello:</strong> ${character.level}</p>
+  <p><strong>Giocatore:</strong> ${character.player}</p>
+  <p><strong>Ascendenza:</strong> ${character.ancestry}</p>
+  <p>${character.summary}</p>
+`;
 
   content.appendChild(createTagList(character.traits));
   dialog.showModal();
@@ -56,11 +57,12 @@ function renderCharacters(characters) {
     card.dataset.characterId = character.id ?? index + 1;
     card.tabIndex = 0;
 
-    card.innerHTML = `
-      <h3>${character.name}</h3>
-      <p><strong>${character.class}</strong> · Livello ${character.level}</p>
-      <p class="entry-link-text">Apri scheda personaggio</p>
-    `;
+card.innerHTML = `
+  ${character.image ? `<img class="character-card-image" src="${character.image}" alt="Ritratto di ${character.name}" loading="lazy" />` : ""}
+  <h3>${character.name}</h3>
+  <p><strong>${character.class}</strong> · Livello ${character.level}</p>
+  <p class="entry-link-text">Apri scheda personaggio</p>
+`;
 
     card.addEventListener("click", () => openCharacterDialog(card.dataset.characterId));
     card.addEventListener("keydown", (event) => {
