@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "Sithis",
     "class": "Monaco",
     "level": 5,
@@ -9,6 +10,7 @@
     "traits": ["Attento", "solitario", "leale"]
   },
   {
+    "id": 2,
     "name": "Elira \"Scintilla\"",
     "class": "Ladra",
     "level": 5,

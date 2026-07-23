@@ -28,34 +28,59 @@
 
   <main>
     <section id="personaggi">
-      <h2>Personaggi</h2>
-      <p>Qui inseriremo i personaggi del party: nome, classe, livello, giocatore e breve descrizione.</p>
-    </section>
+  <a class="section-card-link" href="./characters.html">
+    <article class="entry-card entry-card-clickable entry-card-hub">
+      <h3>Personaggi</h3>
+      <p>Clicca qui per vedere i personaggi del Party con una mini descrizione.</p>
+    </article>
+  </a>
+</section>
 
     <section id="lore">
       <h2>Lore del Party</h2>
-      <p>Qui raccoglieremo il riassunto della storia, gli eventi più importanti e i misteri ancora aperti.</p>
+      <div id="lore-list">
+        <p>Caricamento lore...</p>
+      </div>
     </section>
 
     <section id="luoghi">
       <h2>Luoghi</h2>
-      <p>Qui metteremo città, dungeon, locande, rovine e altri posti visitati dal party.</p>
+      <div id="locations-list">
+        <p>Caricamento luoghi...</p>
+      </div>
     </section>
 
     <section id="png">
       <h2>PNG</h2>
-      <p>Qui terrremo traccia dei personaggi non giocanti: alleati, nemici, contatti e figure sospette.</p>
+      <div id="npcs-list">
+        <p>Caricamento PNG...</p>
+      </div>
     </section>
 
     <section id="info-utili">
       <h2>Info utili</h2>
-      <p>Qui metteremo note pratiche, regole della campagna, link utili e appunti generali.</p>
+      <div id="useful-info-list">
+        <p>Caricamento info utili...</p>
+      </div>
     </section>
   </main>
 
   <footer>
     <p>Creato per la campagna del party.</p>
   </footer>
+
+  <dialog id="character-dialog">
+    <div class="dialog-shell">
+      <button id="close-character-dialog" class="dialog-close" aria-label="Chiudi finestra">
+        ×
+      </button>
+
+      <div id="character-dialog-content">
+        <h3>Dettagli personaggio</h3>
+        <p>Qui compariranno i dettagli del personaggio selezionato.</p>
+      </div>
+    </div>
+  </dialog>
 
   <script src="scripts/app.js"></script>
 </body>

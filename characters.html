@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personaggi | D&D Party Codex</title>
+  <meta name="description" content="Schede e panoramica dei personaggi del party." />
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Personaggi del Party</h1>
+      <p>Qui trovi i membri del gruppo con una mini descrizione e i dettagli principali.</p>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="./index.html">Torna alla home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="personaggi">
+      <h2>Party</h2>
+      <div id="characters-list">
+        <p>Caricamento personaggi...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Creato per la campagna del party.</p>
+  </footer>
+
+  <dialog id="character-dialog">
+    <div class="dialog-shell">
+      <button id="close-character-dialog" class="dialog-close" aria-label="Chiudi finestra">
+        ×
+      </button>
+
+      <div id="character-dialog-content">
+        <h3>Dettagli personaggio</h3>
+        <p>Qui compariranno i dettagli del personaggio selezionato.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>

@@ -121,6 +121,7 @@ h2 {
   margin-top: 0;
   margin-bottom: 12px;
   font-size: 1.8rem;
+  line-height: 1.1;
   font-family: "Dragonit", Georgia, serif;
   letter-spacing: 0.04em;
   display: inline-block;
@@ -132,6 +133,7 @@ h2 {
   margin-top: 0;
   margin-bottom: 12px;
   font-size: 2rem;
+  line-height: 1.1;
   font-family: "Dragonit", Georgia, serif;
   letter-spacing: 0.02em;
 }
@@ -172,4 +174,62 @@ footer p {
   section {
     padding: 20px;
   }
+
+  .entry-card + .entry-card {
+  margin-top: 18px;
+}
+
+.entry-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.entry-card p:last-of-type {
+  margin-bottom: 0;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--text);
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+}
+
+.section-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.entry-card-clickable {
+  cursor: pointer;
+}
+
+
+.entry-card-clickable:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.section-card-link .entry-card-hub h3 {
+  margin: 0 0 10px;
+  font-family: "Dragonit", Georgia, serif;
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  color: var(--text);
+}
 }
