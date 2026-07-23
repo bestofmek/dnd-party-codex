@@ -46,6 +46,10 @@ function renderCharacters(characters) {
   container.innerHTML = "";
   charactersData = characters;
 
+  const grid = document.createElement("div");
+  grid.className = "entries-grid";
+  container.appendChild(grid);
+
   characters.forEach((character, index) => {
     const card = document.createElement("article");
     card.className = "entry-card entry-card-clickable";
@@ -66,7 +70,7 @@ function renderCharacters(characters) {
       }
     });
 
-    container.appendChild(card);
+    grid.appendChild(card);
   });
 }
 
