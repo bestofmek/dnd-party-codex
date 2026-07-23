@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Prologo",
+    "session": "Prima della campagna",
+    "date": "",
+    "text": "Qui inizierà il racconto del party. Questo spazio può contenere il tono iniziale della campagna, il contesto del mondo, il modo in cui i personaggi si sono incontrati oppure il primo evento importante che ha messo tutto in moto.",
+    "tags": ["inizio", "contesto"]
+  },
+  {
+    "id": 2,
+    "title": "Capitolo I",
+    "session": "Sessione 1",
+    "date": "",
+    "text": "Qui puoi scrivere cosa è successo durante la sessione. Per esempio: il party arriva in un nuovo luogo, incontra un PNG importante, scopre un indizio o finisce in pericolo. Scrivilo come un piccolo racconto, anche in modo semplice.",
+    "tags": ["sessione", "sviluppo"]
+  },
+  {
+  "id": 3,
+  "title": "Capitolo II",
+  "session": "Sessione 2",
+  "date": "",
+  "text": "Il party attraversò la porta settentrionale al tramonto.\\nNessuno parlò quando vide le mura spezzate della città.\\nFu allora che la prima voce chiamò qualcuno per nome.",
+  "tags": ["rovine", "mistero"]
+}
+]

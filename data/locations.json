@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Roccafosca",
+    "type": "Città",
+    "status": "visitato",
+    "region": "Costa del Ferro",
+    "summary": "Porto antico costruito su scogliere nere, pieno di nebbia e traffici poco puliti.",
+    "related_npcs": ["Arden Voss"],
+    "tags": ["porto", "politica", "mistero"]
+  },
+  {
+    "name": "Forte Grigio",
+    "type": "Fortezza",
+    "status": "conosciuto",
+    "region": "Marche del Nord",
+    "summary": "Roccaforte militare semidiroccata, ancora controllata da nobili decaduti e guardie fedeli.",
+    "related_npcs": ["Sir Edric Vale"],
+    "tags": ["rovine", "militare", "pericolo"]
+  }
+]

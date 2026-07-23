@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Regola del Critico",
+    "type": "house rule",
+    "summary": "Al 20 naturale su un tiro per colpire, il primo dado è sempre danno massimo (6), poi aggiungi il secondo tiro",
+    "tags": ["regole", "combattimento", "critico"]
+  },
+  {
+    "title": "Calendario sessioni",
+    "type": "organizzazione",
+    "summary": "Le sessioni si tengono normalmente il lunedì sera, salvo variazioni concordate sul gruppo.",
+    "tags": ["tavolo", "orari", "organizzazione"]
+  }
+]

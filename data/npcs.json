@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Arden Voss",
+    "role": "Custode del cimitero",
+    "status": "alleato incerto",
+    "location": "Roccafosca",
+    "summary": "Conosce i morti meglio dei vivi e parla solo quando ha qualcosa da guadagnare.",
+    "tags": ["contatto", "segreti", "morti"]
+  },
+  {
+    "name": "Mira delle Ceneri",
+    "role": "Mercante ambulante",
+    "status": "neutrale",
+    "location": "Strada Vecchia del Sale",
+    "summary": "Appare e scompare tra una tappa e l'altra, vendendo oggetti rari e informazioni poco rassicuranti.",
+    "tags": ["mercante", "viaggiatrice", "mistero"]
+  },
+  {
+    "name": "Sir Edric Vale",
+    "role": "Cavaliere decaduto",
+    "status": "ostile",
+    "location": "Forte Grigio",
+    "summary": "Un nobile caduto in disgrazia che considera il party un ostacolo ai propri piani.",
+    "tags": ["nobile", "antagonista", "politica"]
+  }
+]
