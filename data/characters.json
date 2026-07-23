@@ -1,22 +1,42 @@
 [
   {
     "id": 1,
-    "name": "Sithis",
+    "name": "Sithis Ventargento",
     "class": "Monaco",
     "level": 5,
     "player": "Mik",
     "ancestry": "Mezzelfo",
     "summary": "Un monaco silenzioso e agile, esperto nell'arte del combattimento corpo a corpo e della meditazione.",
-    "traits": ["Attento", "solitario", "leale"]
+    "traits": ["Attento", "Solitario", "Leale"]
   },
   {
     "id": 2,
-    "name": "Elira \"Scintilla\"",
+    "name": "Elira \"Scintilla\" Vey",
     "class": "Ladra",
     "level": 5,
     "player": "Chiara",
     "ancestry": "Umana",
     "summary": "Una ladra astuta e veloce, esperta nella furtività e nella risoluzione di enigmi.",
-    "traits": ["Intelligente", "veloce", "testarda"]
+    "traits": ["Intelligente", "Veloce", "Testarda"]
+  },
+  {
+    "id": 3,
+    "name": "Mapoleon Montelucent",
+    "class": "Chierico",
+    "level": 5,
+    "player": "Luca",
+    "ancestry": "Centauro",
+    "summary": "Un chierico devoto e compassionevole, esperto nella cura dei feriti e nella protezione dei vulnerabili.",
+    "traits": ["Devoto", "Compassionevole", "Coraggioso"]
+  },
+  {
+    "id": 4,
+    "name": "Taruk Sarius",
+    "class": "Chierico",
+    "level": 5,
+    "player": "Pietro",
+    "ancestry": "Tiefling",
+    "summary": "Un chierico attento e riflessivo, esperto nella magia divina e nella guida spirituale.",
+    "traits": ["Pacato", "Studioso", "Incisivo"]
   }
 ]
