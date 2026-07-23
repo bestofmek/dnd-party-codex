@@ -2,11 +2,7 @@ let charactersData = [];
 
 async function loadJson(path) {
   const response = await fetch(path);
-
-  if (!response.ok) {
-    throw new Error(`Errore nel caricamento di ${path}`);
-  }
-
+  if (!response.ok) throw new Error(`Errore nel caricamento di ${path}`);
   return await response.json();
 }
 
@@ -27,10 +23,8 @@ function createTagList(tags = []) {
 function openCharacterDialog(characterId) {
   const dialog = document.getElementById("character-dialog");
   const content = document.getElementById("character-dialog-content");
-
   const character = charactersData.find((item) => String(item.id) === String(characterId));
-
-  if (!character) return;
+  if (!character || !dialog || !content) return;
 
   content.innerHTML = `
     <h3>${character.name}</h3>
@@ -42,14 +36,14 @@ function openCharacterDialog(characterId) {
   `;
 
   content.appendChild(createTagList(character.traits));
-
   dialog.showModal();
 }
 
 function renderCharacters(characters) {
   const container = document.getElementById("characters-list");
-  container.innerHTML = "";
+  if (!container) return;
 
+  container.innerHTML = "";
   charactersData = characters;
 
   characters.forEach((character, index) => {
@@ -64,10 +58,7 @@ function renderCharacters(characters) {
       <p class="entry-link-text">Apri scheda personaggio</p>
     `;
 
-    card.addEventListener("click", () => {
-      openCharacterDialog(card.dataset.characterId);
-    });
-
+    card.addEventListener("click", () => openCharacterDialog(card.dataset.characterId));
     card.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
@@ -81,19 +72,18 @@ function renderCharacters(characters) {
 
 function renderLore(entries) {
   const container = document.getElementById("lore-list");
-  container.innerHTML = "";
+  if (!container) return;
 
+  container.innerHTML = "";
   entries.forEach((entry) => {
     const card = document.createElement("article");
     card.className = "entry-card";
-
     card.innerHTML = `
       <h3>${entry.title}</h3>
       <p><strong>Sessione:</strong> ${entry.session || "-"}</p>
       <p><strong>Data:</strong> ${entry.date || "-"}</p>
       <p>${entry.text}</p>
     `;
-
     card.appendChild(createTagList(entry.tags));
     container.appendChild(card);
   });
@@ -101,12 +91,12 @@ function renderLore(entries) {
 
 function renderLocations(locations) {
   const container = document.getElementById("locations-list");
-  container.innerHTML = "";
+  if (!container) return;
 
+  container.innerHTML = "";
   locations.forEach((location) => {
     const card = document.createElement("article");
     card.className = "entry-card";
-
     card.innerHTML = `
       <h3>${location.name}</h3>
       <p><strong>Tipo:</strong> ${location.type}</p>
@@ -115,7 +105,6 @@ function renderLocations(locations) {
       <p>${location.summary}</p>
       <p><strong>PNG collegati:</strong> ${(location.related_npcs || []).join(", ") || "-"}</p>
     `;
-
     card.appendChild(createTagList(location.tags));
     container.appendChild(card);
   });
@@ -123,12 +112,12 @@ function renderLocations(locations) {
 
 function renderNpcs(npcs) {
   const container = document.getElementById("npcs-list");
-  container.innerHTML = "";
+  if (!container) return;
 
+  container.innerHTML = "";
   npcs.forEach((npc) => {
     const card = document.createElement("article");
     card.className = "entry-card";
-
     card.innerHTML = `
       <h3>${npc.name}</h3>
       <p><strong>Ruolo:</strong> ${npc.role}</p>
@@ -136,7 +125,6 @@ function renderNpcs(npcs) {
       <p><strong>Luogo:</strong> ${npc.location}</p>
       <p>${npc.summary}</p>
     `;
-
     card.appendChild(createTagList(npc.tags));
     container.appendChild(card);
   });
@@ -144,18 +132,17 @@ function renderNpcs(npcs) {
 
 function renderUsefulInfo(items) {
   const container = document.getElementById("useful-info-list");
-  container.innerHTML = "";
+  if (!container) return;
 
+  container.innerHTML = "";
   items.forEach((item) => {
     const card = document.createElement("article");
     card.className = "entry-card";
-
     card.innerHTML = `
       <h3>${item.title}</h3>
       <p><strong>Tipo:</strong> ${item.type}</p>
       <p>${item.summary}</p>
     `;
-
     card.appendChild(createTagList(item.tags));
     container.appendChild(card);
   });
@@ -164,49 +151,54 @@ function renderUsefulInfo(items) {
 function setupDialog() {
   const dialog = document.getElementById("character-dialog");
   const closeButton = document.getElementById("close-character-dialog");
+  if (!dialog || !closeButton) return;
 
-  closeButton.addEventListener("click", () => {
-    dialog.close();
-  });
-
+  closeButton.addEventListener("click", () => dialog.close());
   dialog.addEventListener("click", (event) => {
     const rect = dialog.getBoundingClientRect();
-    const clickedInside =
+    const inside =
       event.clientX >= rect.left &&
       event.clientX <= rect.right &&
       event.clientY >= rect.top &&
       event.clientY <= rect.bottom;
-
-    if (!clickedInside) {
-      dialog.close();
-    }
+    if (!inside) dialog.close();
   });
 }
 
 async function init() {
   try {
-    const [characters, lore, locations, npcs, usefulInfo] = await Promise.all([
-      loadJson("./data/characters.json"),
-      loadJson("./data/lore.json"),
-      loadJson("./data/locations.json"),
-      loadJson("./data/npcs.json"),
-      loadJson("./data/useful-info.json")
-    ]);
+    const page = location.pathname.split("/").pop();
 
-    renderCharacters(characters);
-    renderLore(lore);
-    renderLocations(locations);
-    renderNpcs(npcs);
-    renderUsefulInfo(usefulInfo);
+    const dataMap = {
+      characters: await loadJson("./data/characters.json"),
+      lore: await loadJson("./data/lore.json"),
+      locations: await loadJson("./data/locations.json"),
+      npcs: await loadJson("./data/npcs.json"),
+      usefulInfo: await loadJson("./data/useful-info.json")
+    };
+
+    if (page === "characters.html") {
+      renderCharacters(dataMap.characters);
+      setupDialog();
+      return;
+    }
+
+    if (page === "index.html" || page === "") {
+      const charactersLink = document.querySelector('a[href="./characters.html"]');
+      if (charactersLink) {
+        charactersLink.classList.add("section-card-link");
+      }
+      return;
+    }
+
+    renderCharacters(dataMap.characters);
+    renderLore(dataMap.lore);
+    renderLocations(dataMap.locations);
+    renderNpcs(dataMap.npcs);
+    renderUsefulInfo(dataMap.usefulInfo);
     setupDialog();
   } catch (error) {
     console.error(error);
-
-    document.getElementById("characters-list").innerHTML = "<p>Errore nel caricamento dei personaggi.</p>";
-    document.getElementById("lore-list").innerHTML = "<p>Errore nel caricamento della lore.</p>";
-    document.getElementById("locations-list").innerHTML = "<p>Errore nel caricamento dei luoghi.</p>";
-    document.getElementById("npcs-list").innerHTML = "<p>Errore nel caricamento dei PNG.</p>";
-    document.getElementById("useful-info-list").innerHTML = "<p>Errore nel caricamento delle info utili.</p>";
   }
 }
 

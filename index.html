@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>D&D Party Codex</title>
-  <meta name="description" content="Companion site del party di D&D con personaggi, lore, luoghi, PNG e info utili." />
+  <meta
+    name="description"
+    content="Hub della campagna con personaggi, lore, luoghi, PNG e informazioni utili."
+  />
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
@@ -12,55 +15,63 @@
     <div>
       <p>Companion site</p>
       <h1>D&D Party Codex</h1>
-      <p>Un posto semplice dove raccogliere personaggi, storia, luoghi e volti importanti della campagna.</p>
+      <p>
+        Un posto semplice dove raccogliere i punti chiave della campagna,
+        consultarli al volo e tenere ordinato tutto il materiale del party.
+      </p>
     </div>
 
-    <nav>
+    <nav aria-label="Navigazione principale">
       <ul>
-        <li><a href="#personaggi">Personaggi</a></li>
-        <li><a href="#lore">Lore del Party</a></li>
-        <li><a href="#luoghi">Luoghi</a></li>
-        <li><a href="#png">PNG</a></li>
-        <li><a href="#info-utili">Info utili</a></li>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./characters.html">Personaggi</a></li>
+        <li><a href="./lore.html">Lore</a></li>
+        <li><a href="./locations.html">Luoghi</a></li>
+        <li><a href="./npcs.html">PNG</a></li>
+        <li><a href="./info.html">Info utili</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section id="personaggi">
-  <a class="section-card-link" href="./characters.html">
-    <article class="entry-card entry-card-clickable entry-card-hub">
-      <h3>Personaggi</h3>
-      <p>Clicca qui per vedere i personaggi del Party con una mini descrizione.</p>
-    </article>
-  </a>
-</section>
+    <section aria-labelledby="hub-title">
+      <h2 id="hub-title">Sezioni</h2>
 
-    <section id="lore">
-      <h2>Lore del Party</h2>
-      <div id="lore-list">
-        <p>Caricamento lore...</p>
-      </div>
-    </section>
+      <div class="hub-grid">
+        <a class="section-card-link" href="./characters.html">
+          <article class="entry-card entry-card-clickable entry-card-hub">
+            <h3>Personaggi</h3>
+            <p>Clicca qui per vedere i personaggi del Party con una mini descrizione.</p>
+          </article>
+        </a>
 
-    <section id="luoghi">
-      <h2>Luoghi</h2>
-      <div id="locations-list">
-        <p>Caricamento luoghi...</p>
-      </div>
-    </section>
+        <a class="section-card-link" href="./lore.html">
+          <article class="entry-card entry-card-clickable entry-card-hub">
+            <h3>Lore del Party</h3>
+            <p>Cronologia, eventi, appunti e dettagli importanti della campagna.</p>
+          </article>
+        </a>
 
-    <section id="png">
-      <h2>PNG</h2>
-      <div id="npcs-list">
-        <p>Caricamento PNG...</p>
-      </div>
-    </section>
+        <a class="section-card-link" href="./locations.html">
+          <article class="entry-card entry-card-clickable entry-card-hub">
+            <h3>Luoghi</h3>
+            <p>Posti visitati, regioni, punti di interesse e riferimenti geografici.</p>
+          </article>
+        </a>
 
-    <section id="info-utili">
-      <h2>Info utili</h2>
-      <div id="useful-info-list">
-        <p>Caricamento info utili...</p>
+        <a class="section-card-link" href="./npcs.html">
+          <article class="entry-card entry-card-clickable entry-card-hub">
+            <h3>PNG</h3>
+            <p>Personaggi non giocanti, alleati, avversari e contatti incontrati.</p>
+          </article>
+        </a>
+
+        <a class="section-card-link" href="./info.html">
+          <article class="entry-card entry-card-clickable entry-card-hub">
+            <h3>Info utili</h3>
+            <p>Note rapide, riferimenti pratici, regole e materiale da consultare al volo.</p>
+          </article>
+        </a>
       </div>
     </section>
   </main>
@@ -68,19 +79,6 @@
   <footer>
     <p>Creato per la campagna del party.</p>
   </footer>
-
-  <dialog id="character-dialog">
-    <div class="dialog-shell">
-      <button id="close-character-dialog" class="dialog-close" aria-label="Chiudi finestra">
-        ×
-      </button>
-
-      <div id="character-dialog-content">
-        <h3>Dettagli personaggio</h3>
-        <p>Qui compariranno i dettagli del personaggio selezionato.</p>
-      </div>
-    </div>
-  </dialog>
 
   <script src="scripts/app.js"></script>
 </body>
