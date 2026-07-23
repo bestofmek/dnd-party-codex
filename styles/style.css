@@ -19,9 +19,8 @@
 }
 
 @font-face {
-  font-family: "DragonitWeb";
-  src: local("Dragonit"),
-       url("../assets/fonts/Dragonit-4ned6.otf?v=3") format("opentype");
+  font-family: "Dragonit";
+  src: url("../assets/fonts/Dragonit.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -92,7 +91,7 @@ h3 {
 
 h1 {
   margin-bottom: 12px;
-  font-family: "DragonitWeb", Georgia, serif;
+  font-family: "Dragonit", Georgia, serif;
   font-size: clamp(2.1rem, 4.5vw, 3.9rem);
   line-height: 1;
   letter-spacing: 0.03em;
@@ -100,7 +99,7 @@ h1 {
 
 h2 {
   margin-bottom: 18px;
-  font-family: "DragonitWeb", Georgia, serif;
+  font-family: "Dragonit", Georgia, serif;
   font-size: clamp(1.7rem, 3vw, 2.7rem);
   line-height: 1.05;
   letter-spacing: 0.03em;
